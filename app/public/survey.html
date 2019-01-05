@@ -44,11 +44,146 @@
                         <div class="form-group">
                             <label for="photo-link">Link to Photo Image (Required)</label>
                             <input type="text" class="form-control" id="photo-link">
+                            <hr>
+
+                            <!--Friend Questions-->
+                            <h3>Question 1</h3>
+                            <label for="ques1">You consider yourself easy-going.</label>
+                            <select class="form-control mb-4" id="ques1">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 2</h3>
+                            <label for="ques2">You like dogs.</label>
+                            <select class="form-control mb-4" id="ques2">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 3</h3>
+                            <label for="ques3">You enjoy being outside.</label>
+                            <select class="form-control mb-4" id="ques3">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 4</h3>
+                            <label for="ques4">You enjoy breweries.</label>
+                            <select class="form-control mb-4" id="ques4">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 5</h3>
+                            <label for="ques5">You consider yourself athletic.</label>
+                            <select class="form-control mb-4" id="ques5">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 6</h3>
+                            <label for="ques6">You like coffee.</label>
+                            <select class="form-control mb-4" id="ques6">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 7</h3>
+                            <label for="ques7">You are a picky eater.</label>
+                            <select class="form-control mb-4" id="ques7">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 8</h3>
+                            <label for="ques8">You like to read books.</label>
+                            <select class="form-control mb-4" id="ques8">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 9</h3>
+                            <label for="ques9">You enjoy being around other people.</label>
+                            <select class="form-control mb-4" id="ques9">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                            <h3>Question 10</h3>
+                            <label for="ques10">Your idea of a fun Friday night is ordering a pizza and watching
+                                movies.</label>
+                            <select class="form-control mb-4" id="ques10">
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary submit">Submit</button>
                 </div>
             </div>
             </form>
+
+            <h2>Friend Found Modal</h2>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#friendModal">
+                Open modal
+            </button>
+    
+            <!-- The Modal -->
+            <div class="modal" id="friendModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+    
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Hooray for New Friends!!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div id="winner-photo-link">
+                            <h6><span id="winner-name"> is most compatible to you!</span></h6>
+
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning text-dark" data-dismiss="modal">Find More Friends</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
 
 
             <footer class="footer">
@@ -63,3 +198,55 @@
 </body>
 
 </html>
+
+<!-- Handles how data is sent to the server -->
+<script type="text/javascript">
+    $(".submit").on("click", function (event) {
+                event.preventDefault();
+
+                //taking data from survey
+                var surveyAns = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo-link").val().trim(),
+                    scores: [
+                        $("#ques1").val(),
+                        $("#ques2").val(),
+                        $("#ques3").val(),
+                        $("#ques4").val(),
+                        $("#ques5").val(),
+                        $("#ques6").val(),
+                        $("#ques7").val(),
+                        $("#ques8").val(),
+                        $("#ques9").val(),
+                        $("#ques10").val(),
+                    ]
+                };
+
+                console.log(surveyAns);
+
+                const totalDifference = 0;
+
+                $.post("/api/friends", surveyAns,
+                    function (data) {
+                        if (data) {
+                            alert("added to api")
+                        }
+                        for (var i = 0; i < surveyAns.length; i++) {
+                            //call in friendArray here? friends.js?
+                            for (var j = 0; i < data.length; j++) {
+                                totalDifference = Math.abs(surveyAns.length - data.length)
+                            }
+                            console.log(totalDifference);
+                        }
+                    })
+                })
+                        // console.log(totalDifference)
+                    // })
+                // })
+                //need to take current survey and compare against api of survey responses
+//var newSurvey - surveyAns = Math.abs(totalDifference).toString();
+
+//Make double for loop-->cycle through new survey then previous surveys and do Math.abs against each comparison
+
+</script>
+
