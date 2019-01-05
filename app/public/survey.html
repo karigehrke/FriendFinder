@@ -224,20 +224,11 @@
 
                 console.log(surveyAns);
 
-                const totalDifference = 0;
-
                 $.post("/api/friends", surveyAns,
                     function (data) {
-                        if (data) {
-                            alert("added to api")
-                        }
-                        for (var i = 0; i < surveyAns.length; i++) {
-                            //call in friendArray here? friends.js?
-                            for (var j = 0; i < data.length; j++) {
-                                totalDifference = Math.abs(surveyAns.length - data.length)
-                            }
-                            console.log(totalDifference);
-                        }
+                        $("#winner-photo-link").append(data.photo);
+                        $("winner-name").append(data.name);
+                       
                     })
                 })
                         // console.log(totalDifference)
